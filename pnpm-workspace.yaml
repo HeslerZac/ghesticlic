@@ -1,0 +1,6 @@
+# Seguridad de la cadena de suministro (pnpm 10)
+# No instalar versiones publicadas hace menos de 3 días (4320 minutos)
+minimumReleaseAge: 4320
+
+# Solo estos paquetes pueden ejecutar scripts de instalación
+onlyBuiltDependencies: []
