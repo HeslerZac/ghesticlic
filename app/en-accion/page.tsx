@@ -8,18 +8,18 @@ export const metadata = {
 };
 
 const VIDEOS = [
-  { titulo: "Demostración completa del sistema", youtubeId: "" },
+  { titulo: "Demostración completa del sistema", src: "/GHestiClic_DEMO.mp4" },
 ];
 
 const CAPTURAS = [
-  { titulo: "Calibración del rostro", src: "" },
-  { titulo: "Control del cursor con la cabeza", src: "" },
-  { titulo: "Clic izquierdo", src: "" },
-  { titulo: "Doble clic", src: "" },
-  { titulo: "Escritura con teclado virtual", src: "" },
-  { titulo: "Desplazamiento (scroll)", src: "" },
-  { titulo: "Apertura de aplicaciones", src: "" },
-  { titulo: "Gestión de perfiles y sensibilidad", src: "" },
+  { titulo: "Instalación guiada", src: "/en-accion/1_instalacion.jpg" },
+  { titulo: "Pantalla principal", src: "/en-accion/2_pantalla_principal.jpg" },
+  { titulo: "Guía de gestos", src: "/en-accion/3_guia_gestos.jpg" },
+  { titulo: "Calibración de gestos y umbrales", src: "/en-accion/4_calibracion.jpg" },
+  { titulo: "Administración de perfiles", src: "/en-accion/5_perfiles.jpg" },
+  { titulo: "Modo de prueba (simulación)", src: "/en-accion/6_modo_prueba.jpg" },
+  { titulo: "Configuración del sistema", src: "/en-accion/7_configuracion.jpg" },
+  { titulo: "Acceso administrativo seguro", src: "/en-accion/8_administracion.jpg" },
 ];
 
 function Proximamente({ icono, texto, aspecto }: { icono: React.ReactNode; texto: string; aspecto: string }) {
@@ -58,16 +58,17 @@ export default function EnAccion() {
       <StaggerGroup className="mt-6 grid gap-6">
         {VIDEOS.map((v, i) => (
           <StaggerItem key={i}>
-            {v.youtubeId ? (
+            {v.src ? (
               <div className="overflow-hidden rounded-2xl border border-[var(--border)]">
-                <iframe
-                  className="aspect-video w-full"
-                  src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
-                  title={v.titulo}
-                  loading="lazy"
-                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <video
+                  className="aspect-video w-full bg-black"
+                  src={v.src}
+                  controls
+                  preload="metadata"
+                  playsInline
+                >
+                  {v.titulo}
+                </video>
               </div>
             ) : (
               <Proximamente icono={<PlayCircle className="h-8 w-8" />} texto={v.titulo} aspecto="aspect-video" />
@@ -91,7 +92,7 @@ export default function EnAccion() {
                   src={c.src}
                   alt={c.titulo}
                   loading="lazy"
-                  className="aspect-[4/3] w-full rounded-2xl border border-[var(--border)] object-cover"
+                  className="aspect-[4/3] w-full rounded-2xl border border-[var(--border)] bg-[var(--bg-soft)] object-contain"
                 />
               ) : (
                 <Proximamente icono={<ImageIcon className="h-7 w-7" />} texto={c.titulo} aspecto="aspect-[4/3]" />

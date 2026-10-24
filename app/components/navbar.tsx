@@ -10,6 +10,7 @@ const ENLACES = [
   { href: "/como-funciona", texto: "Cómo funciona" },
   { href: "/tecnologia", texto: "Tecnología" },
   { href: "/en-accion", texto: "En acción" },
+  { href: "/documentacion", texto: "Manual" },
   { href: "/descargar", texto: "Descargar" },
 ];
 

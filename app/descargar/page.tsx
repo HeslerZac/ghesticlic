@@ -1,7 +1,9 @@
-import { Download, Monitor, Camera, Mic, HardDrive, CheckCircle2 } from "lucide-react";
+import { Download, Monitor, Camera, Mic, HardDrive, CheckCircle2, BookOpen } from "lucide-react";
 import { FadeIn, StaggerGroup, StaggerItem } from "@/app/components/motion";
 
-const ENLACE_DESCARGA = "#";
+const ENLACE_DESCARGA =
+  "https://drive.google.com/uc?export=download&id=1ulHYm0VFOrBm6MCVnJa868nc3YrOOtU_";
+const ENLACE_MANUAL = "/Manual_de_Usuario_GHestiClic.pdf";
 
 const REQUISITOS = [
   { icono: Monitor, texto: "Windows 10 u 11 (64 bits)" },
@@ -35,6 +37,8 @@ export default function Descargar() {
         <div className="mt-10 flex flex-col items-center rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--accent)]/10 to-[var(--accent-2)]/10 p-10 text-center">
           <a
             href={ENLACE_DESCARGA}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-8 py-4 text-lg font-semibold text-white transition-transform hover:scale-105"
           >
             <Download className="h-6 w-6" />
@@ -43,6 +47,15 @@ export default function Descargar() {
           <p className="mt-4 text-sm text-[var(--text-soft)]">
             Versión 1.0 · Instalador .exe
           </p>
+          <a
+            href={ENLACE_MANUAL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--card)] px-6 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          >
+            <BookOpen className="h-5 w-5" />
+            Manual de usuario (PDF)
+          </a>
         </div>
       </FadeIn>
 

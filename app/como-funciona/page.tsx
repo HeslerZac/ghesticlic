@@ -12,19 +12,19 @@ import { FadeIn, StaggerGroup, StaggerItem } from "@/app/components/motion";
 
 const GESTOS = [
   {
-    gesto: "Abrir la boca",
+    gesto: "Levantar las cejas",
     accion: "Clic izquierdo",
-    detalle: "Una apertura corta hace clic; dos seguidas, doble clic.",
+    detalle: "Una subida corta hace clic; dos seguidas, doble clic.",
     icono: MousePointerClick,
   },
   {
-    gesto: "Boca abierta sostenida",
+    gesto: "Cejas sostenidas",
     accion: "Arrastrar y seleccionar",
-    detalle: "Mantén la boca abierta y mueve la cabeza para arrastrar.",
+    detalle: "Mantén las cejas levantadas y mueve la cabeza para arrastrar.",
     icono: Move,
   },
   {
-    gesto: "Levantar las cejas",
+    gesto: "Abrir la boca",
     accion: "Clic derecho",
     detalle: "Abre el menú contextual, igual que el botón derecho del mouse.",
     icono: MousePointer2,
@@ -32,7 +32,7 @@ const GESTOS = [
   {
     gesto: "Sonreír",
     accion: "Modo scroll",
-    detalle: "Activa el desplazamiento; mueve la cabeza para scroll vertical u horizontal.",
+    detalle: "Activa el desplazamiento; mueve la cabeza para hacer scroll.",
     icono: ScrollText,
   },
   {
@@ -42,7 +42,7 @@ const GESTOS = [
     icono: Mic,
   },
   {
-    gesto: "Mover la cabeza",
+    gesto: "Mover la cabeza (nariz)",
     accion: "Mover el cursor",
     detalle: "La posición de la nariz controla el puntero, con suavizado anti-temblor.",
     icono: MousePointer,
@@ -60,7 +60,7 @@ const PASOS = [
     icono: Cpu,
     titulo: "2. La IA reconoce tus gestos",
     texto:
-      "MediaPipe analiza 52 puntos de expresión facial y detecta cada gesto según tu calibración.",
+      "MediaPipe analiza 468 puntos del rostro y detecta cada gesto según tu calibración.",
   },
   {
     icono: MousePointer,
@@ -126,25 +126,6 @@ export default function ComoFunciona() {
           </StaggerItem>
         ))}
       </StaggerGroup>
-
-      <FadeIn>
-        <h2 className="mt-20 text-center text-3xl font-bold">
-          Míralo en acción
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-center text-[var(--text-soft)]">
-          Videos de demostración del sistema funcionando con usuarios reales.
-        </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {[1, 2].map((n) => (
-            <div
-              key={n}
-              className="flex aspect-video items-center justify-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--bg-soft)] text-[var(--text-soft)]"
-            >
-              Video {n} (próximamente)
-            </div>
-          ))}
-        </div>
-      </FadeIn>
     </div>
   );
 }

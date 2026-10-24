@@ -94,6 +94,17 @@ export default function Documentacion() {
         <p className="mx-auto mt-4 max-w-2xl text-center text-[var(--text-soft)]">
           Manual de usuario para instalar, configurar y usar SATGF.
         </p>
+        <div className="mt-6 flex justify-center">
+          <a
+            href="/Manual_de_Usuario_GHestiClic.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-105"
+          >
+            <Download className="h-5 w-5" />
+            Descargar manual (PDF)
+          </a>
+        </div>
       </FadeIn>
 
       <FadeIn>
